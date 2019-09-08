@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.yrrhelp.grpc";
+
+service user{
+    rpc login(LoginRequest)  returns (APIResponse);
+    rpc logout(Empty)  returns (APIResponse);
+}
+
+message LoginRequest{
+       string username = 1 ;
+       string password = 2 ;
+}
+
+message APIResponse{
+      string responsemessage = 1;
+      int32  responseCode  = 2;
+}
+
+message Empty{
+}
